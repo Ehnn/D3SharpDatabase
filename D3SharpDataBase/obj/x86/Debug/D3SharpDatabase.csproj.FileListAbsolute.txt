@@ -7,3 +7,6 @@ D:\d3sharp\D3SharpDatabase\source\D3SharpDataBase\bin\Debug\Google.ProtocolBuffe
 D:\d3sharp\D3SharpDatabase\source\D3SharpDataBase\bin\Debug\D3Proto.pdb
 D:\d3sharp\D3SharpDatabase\source\D3SharpDataBase\obj\x86\Debug\D3SharpDatabase.exe
 D:\d3sharp\D3SharpDatabase\source\D3SharpDataBase\obj\x86\Debug\D3SharpDatabase.pdb
+D:\d3sharp\D3SharpDatabase\D3SharpDataBase\bin\Debug\D3SharpDatabase.exe.config
+D:\d3sharp\D3SharpDatabase\D3SharpDataBase\obj\x86\Debug\D3SharpDatabase.exe
+D:\d3sharp\D3SharpDatabase\D3SharpDataBase\obj\x86\Debug\D3SharpDatabase.pdb

@@ -15,7 +15,8 @@ namespace D3Database
         {
             try
             {
-                string dbFile = "d3sharp_fixed20110918_2.sqlite";
+                //string dbFile = "d3sharp_fixed20110918_2.sqlite";
+                string dbFile = "DB.sqlite";
                 Database.Instance.Connect(dbFile);
                 if (Database.Instance.Connection.State != System.Data.ConnectionState.Open)
                 {
