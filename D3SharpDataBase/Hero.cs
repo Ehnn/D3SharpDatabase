@@ -51,8 +51,8 @@ namespace D3Database
         {
             if (Id != -1)
                 return false;
-            if (!Account.CheckIfAccountExists(accountId))
-                return false;
+            //if (!Account.CheckIfAccountExists(accountId))
+                //return false;
             if (CheckIfHeroExists(accountId, Name))
                 return false;
             SQLiteCommand command = new SQLiteCommand(string.Format("INSERT INTO hero (account_id, name, hero_class_id, hero_gender_id, experience, level) VALUES('{0}','{1}','{2}','{3}', '{4}', '{5}')", accountId, Name, HeroClass, Gender, Experience, Level), Database.Instance.Connection);

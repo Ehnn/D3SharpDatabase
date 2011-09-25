@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+    <EntitySetMapping Name="D3AccountBannerConfiguration">
+      <EntityTypeMapping TypeName="DBModel.D3AccountBannerConfiguration">
+        <MappingFragment StoreEntitySet="D3AccountBannerConfiguration">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="banner_index" ColumnName="banner_index" />
+          <ScalarProperty Name="sigil_main" ColumnName="sigil_main" />
+          <ScalarProperty Name="sigil_accent" ColumnName="sigil_accent" />
+          <ScalarProperty Name="pattern_color_index" ColumnName="pattern_color_index" />
+          <ScalarProperty Name="background_color_index" ColumnName="background_color_index" />
+          <ScalarProperty Name="sigil_color_index" ColumnName="sigil_color_index" />
+          <ScalarProperty Name="placement_index" ColumnName="placement_index" />
+          <ScalarProperty Name="pattern" ColumnName="pattern" />
+          <ScalarProperty Name="use_sigil_variant" ColumnName="use_sigil_variant" />
+          <ScalarProperty Name="account_digest_id" ColumnName="account_digest_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="D3AccountDigest">
+      <EntityTypeMapping TypeName="DBModel.D3AccountDigest">
+        <MappingFragment StoreEntitySet="D3AccountDigest">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="last_played_hero_id" ColumnName="last_played_hero_id" />
+          <ScalarProperty Name="flags" ColumnName="flags" />
+          <ScalarProperty Name="accountid" ColumnName="accountid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="D3AccountSavedDefinition">
+      <EntityTypeMapping TypeName="DBModel.D3AccountSavedDefinition">
+        <MappingFragment StoreEntitySet="D3AccountSavedDefinition">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="D3AccountSavedDefinition_seen_tutorials">
+      <EntityTypeMapping TypeName="DBModel.D3AccountSavedDefinition_seen_tutorials">
+        <MappingFragment StoreEntitySet="D3AccountSavedDefinition_seen_tutorials">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="accountid" ColumnName="accountid" />
+          <ScalarProperty Name="tutorialnumber" ColumnName="tutorialnumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

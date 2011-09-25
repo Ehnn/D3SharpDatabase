@@ -10,11 +10,21 @@ namespace D3Database
 {
     class Program
     {
-        static Account currentAccount = null;
+        //static Account currentAccount = null;
         static void Main(string[] args)
         {
             try
             {
+                D3DB.Connect();
+                if (!D3DB.IsConnected)
+                {
+                    Console.WriteLine("Problem connecting to database");
+                }
+
+
+                return;
+
+
                 //string dbFile = "d3sharp_fixed20110918_2.sqlite";
                 string dbFile = "DB.sqlite";
                 Database.Instance.Connect(dbFile);
@@ -29,8 +39,8 @@ namespace D3Database
 
                 while (true)
                 {
-                    if (currentAccount != null)
-                        Console.Write(currentAccount.Name);
+                    //if (currentAccount != null)
+                      //  Console.Write(currentAccount.Name);
                     Console.Write(">");
                     var command = Console.ReadLine();
                     switch (command)
@@ -107,10 +117,10 @@ namespace D3Database
             int gold;
             int.TryParse(goldString, out gold);
 
-            var account = new Account(name, gold, gender);
-            if (account.Create(password))
-                Console.WriteLine("Account {0} created", name);
-            else
+            //var account = new Account(name, gold, gender);
+            //if (account.Create(password))
+                //Console.WriteLine("Account {0} created", name);
+            //else
                 Console.WriteLine("Account already exists");
         }
 
@@ -138,11 +148,11 @@ namespace D3Database
             Console.Write("Password: ");
             var password = Console.ReadLine();
 
-            if (Account.Authorize(name, password, out currentAccount))
+            //if (Account.Authorize(name, password, out currentAccount))
             {
                 Console.WriteLine("Logged in as {0}", name);
             }
-            else
+            //else
             {
                 Console.WriteLine("Failed to login");
             }
@@ -150,18 +160,18 @@ namespace D3Database
 
         static void CommandLogout()
         {
-            currentAccount = null;
+            //currentAccount = null;
             Console.WriteLine("Logged out");
         }
 
         static void CommandListHeroes()
         {
-            if (currentAccount == null)
+            //if (currentAccount == null)
             {
                 Console.WriteLine("not logged in");
                 return;
             }
-            var heroes = currentAccount.GetHeroes();
+            var heroes = new List<int>();//currentAccount.GetHeroes();
             if (heroes.Count > 0)
             {
                 foreach (var hero in heroes)
@@ -175,7 +185,7 @@ namespace D3Database
 
         static void CommandCreateHero()
         {
-            if (currentAccount == null)
+            //if (currentAccount == null)
             {
                 Console.WriteLine("not logged in");
                 return;
@@ -217,15 +227,15 @@ namespace D3Database
             int.TryParse(experienceString, out experience);
 
             var hero = new Hero(name, heroClass, gender, experience, level);
-            if (hero.Create(currentAccount.Id))
+            //if (hero.Create(currentAccount.Id))
                 Console.WriteLine("Hero {0} created", name);
-            else
+            //else
                 Console.WriteLine("Hero already exists");
         }
 
         static void CommandCreateBanner()
         {
-            if (currentAccount == null)
+            //if (currentAccount == null)
             {
                 Console.WriteLine("not logged in");
                 return;
@@ -267,23 +277,23 @@ namespace D3Database
             Console.Write("UseSigilVariant (yes/no): ");
             var useSigilVariant = Console.ReadLine() == "yes";
 
-            var accountBanner = new AccountBanner(currentAccount.Id, backgroundColor, banner, pattern, patternColor, placement, sigilAccent, sigilMain, sigilColor, useSigilVariant);
-            if (accountBanner.Create())
+            //var accountBanner = new AccountBanner(currentAccount.Id, backgroundColor, banner, pattern, patternColor, placement, sigilAccent, sigilMain, sigilColor, useSigilVariant);
+            //if (accountBanner.Create())
                 Console.WriteLine("Banner created");
-            else
+            //else
                 Console.WriteLine("Failed to create banner");
         }
 
         static void CommandListBanners()
         {
-            if (currentAccount == null)
+            //if (currentAccount == null)
             {
                 Console.WriteLine("not logged in");
                 return;
             }
 
-            var banners = currentAccount.GetBanners();
-            if (banners.Count > 0)
+            //var banners = currentAccount.GetBanners();
+            /*if (banners.Count > 0)
             {
                 foreach (var banner in banners)
                 {
@@ -291,12 +301,12 @@ namespace D3Database
                 }
             }
             else
-                Console.WriteLine("No account banners");
+                Console.WriteLine("No account banners");*/
         }
 
         static void CommandHeroLevelUp()
         {
-            if (currentAccount == null)
+            //if (currentAccount == null)
             {
                 Console.WriteLine("not logged in");
                 return;

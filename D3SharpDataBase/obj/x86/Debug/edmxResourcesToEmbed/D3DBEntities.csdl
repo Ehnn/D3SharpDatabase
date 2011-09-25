@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="D3AccountBannerConfiguration" EntityType="DBModel.D3AccountBannerConfiguration" />
+    <EntitySet Name="D3AccountDigest" EntityType="DBModel.D3AccountDigest" />
+    <EntitySet Name="D3AccountSavedDefinition" EntityType="DBModel.D3AccountSavedDefinition" />
+    <EntitySet Name="D3AccountSavedDefinition_seen_tutorials" EntityType="DBModel.D3AccountSavedDefinition_seen_tutorials" />
+  </EntityContainer>
+  <EntityType Name="D3AccountBannerConfiguration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="banner_index" Type="Int32" Nullable="false" />
+    <Property Name="sigil_main" Type="Int32" Nullable="false" />
+    <Property Name="sigil_accent" Type="Int32" Nullable="false" />
+    <Property Name="pattern_color_index" Type="Int32" Nullable="false" />
+    <Property Name="background_color_index" Type="Int32" Nullable="false" />
+    <Property Name="sigil_color_index" Type="Int32" Nullable="false" />
+    <Property Name="placement_index" Type="Int32" Nullable="false" />
+    <Property Name="pattern" Type="Int32" Nullable="false" />
+    <Property Name="use_sigil_variant" Type="Int32" Nullable="false" />
+    <Property Name="account_digest_id" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="D3AccountDigest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="last_played_hero_id" Type="Guid" Nullable="false" />
+    <Property Name="flags" Type="Int32" />
+    <Property Name="accountid" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="D3AccountSavedDefinition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="D3AccountSavedDefinition_seen_tutorials">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="accountid" Type="Guid" Nullable="false" />
+    <Property Name="tutorialnumber" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -10,3 +10,9 @@ D:\d3sharp\D3SharpDatabase\source\D3SharpDataBase\obj\x86\Debug\D3SharpDatabase.
 D:\d3sharp\D3SharpDatabase\D3SharpDataBase\bin\Debug\D3SharpDatabase.exe.config
 D:\d3sharp\D3SharpDatabase\D3SharpDataBase\obj\x86\Debug\D3SharpDatabase.exe
 D:\d3sharp\D3SharpDatabase\D3SharpDataBase\obj\x86\Debug\D3SharpDatabase.pdb
+D:\d3sharp\D3SharpDatabase\D3SharpDataBase\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\d3sharp\D3SharpDatabase\D3SharpDataBase\bin\Debug\D3SharpDatabase.exe
+D:\d3sharp\D3SharpDatabase\D3SharpDataBase\bin\Debug\D3SharpDatabase.pdb
+D:\d3sharp\D3SharpDatabase\D3SharpDataBase\bin\Debug\Google.ProtocolBuffers.dll
+D:\d3sharp\D3SharpDatabase\D3SharpDataBase\bin\Debug\System.Data.SQLite.dll
+D:\d3sharp\D3SharpDatabase\D3SharpDataBase\bin\Debug\System.Data.SQLite.Linq.dll

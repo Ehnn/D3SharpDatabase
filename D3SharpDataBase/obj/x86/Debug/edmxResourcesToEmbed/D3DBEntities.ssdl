@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="D3AccountBannerConfiguration" EntityType="DBModel.Store.D3AccountBannerConfiguration" store:Type="Tables" />
+    <EntitySet Name="D3AccountDigest" EntityType="DBModel.Store.D3AccountDigest" store:Type="Tables" />
+    <EntitySet Name="D3AccountSavedDefinition" EntityType="DBModel.Store.D3AccountSavedDefinition" store:Type="Tables" />
+    <EntitySet Name="D3AccountSavedDefinition_seen_tutorials" EntityType="DBModel.Store.D3AccountSavedDefinition_seen_tutorials" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="D3AccountBannerConfiguration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="banner_index" Type="int" Nullable="false" />
+    <Property Name="sigil_main" Type="int" Nullable="false" />
+    <Property Name="sigil_accent" Type="int" Nullable="false" />
+    <Property Name="pattern_color_index" Type="int" Nullable="false" />
+    <Property Name="background_color_index" Type="int" Nullable="false" />
+    <Property Name="sigil_color_index" Type="int" Nullable="false" />
+    <Property Name="placement_index" Type="int" Nullable="false" />
+    <Property Name="pattern" Type="int" Nullable="false" />
+    <Property Name="use_sigil_variant" Type="int" Nullable="false" />
+    <Property Name="account_digest_id" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="D3AccountDigest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="last_played_hero_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="flags" Type="int" />
+    <Property Name="accountid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="D3AccountSavedDefinition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="email" Type="nvarchar" Nullable="false" />
+    <Property Name="password" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="D3AccountSavedDefinition_seen_tutorials">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="accountid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="tutorialnumber" Type="int" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="D3AccountBannerConfiguration" EntityType="DBModel.Store.D3AccountBannerConfiguration" store:Type="Tables" />
+          <EntitySet Name="D3AccountDigest" EntityType="DBModel.Store.D3AccountDigest" store:Type="Tables" />
+          <EntitySet Name="D3AccountSavedDefinition" EntityType="DBModel.Store.D3AccountSavedDefinition" store:Type="Tables" />
+          <EntitySet Name="D3AccountSavedDefinition_seen_tutorials" EntityType="DBModel.Store.D3AccountSavedDefinition_seen_tutorials" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="D3AccountBannerConfiguration">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="banner_index" Type="int" Nullable="false" />
+          <Property Name="sigil_main" Type="int" Nullable="false" />
+          <Property Name="sigil_accent" Type="int" Nullable="false" />
+          <Property Name="pattern_color_index" Type="int" Nullable="false" />
+          <Property Name="background_color_index" Type="int" Nullable="false" />
+          <Property Name="sigil_color_index" Type="int" Nullable="false" />
+          <Property Name="placement_index" Type="int" Nullable="false" />
+          <Property Name="pattern" Type="int" Nullable="false" />
+          <Property Name="use_sigil_variant" Type="int" Nullable="false" />
+          <Property Name="account_digest_id" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="D3AccountDigest">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="last_played_hero_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="flags" Type="int" />
+          <Property Name="accountid" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="D3AccountSavedDefinition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="email" Type="nvarchar" Nullable="false" />
+          <Property Name="password" Type="nvarchar" Nullable="false" />
+        </EntityType>
+        <EntityType Name="D3AccountSavedDefinition_seen_tutorials">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="accountid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="tutorialnumber" Type="int" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="D3AccountBannerConfiguration" EntityType="DBModel.D3AccountBannerConfiguration" />
+          <EntitySet Name="D3AccountDigest" EntityType="DBModel.D3AccountDigest" />
+          <EntitySet Name="D3AccountSavedDefinition" EntityType="DBModel.D3AccountSavedDefinition" />
+          <EntitySet Name="D3AccountSavedDefinition_seen_tutorials" EntityType="DBModel.D3AccountSavedDefinition_seen_tutorials" />
+        </EntityContainer>
+        <EntityType Name="D3AccountBannerConfiguration">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="banner_index" Type="Int32" Nullable="false" />
+          <Property Name="sigil_main" Type="Int32" Nullable="false" />
+          <Property Name="sigil_accent" Type="Int32" Nullable="false" />
+          <Property Name="pattern_color_index" Type="Int32" Nullable="false" />
+          <Property Name="background_color_index" Type="Int32" Nullable="false" />
+          <Property Name="sigil_color_index" Type="Int32" Nullable="false" />
+          <Property Name="placement_index" Type="Int32" Nullable="false" />
+          <Property Name="pattern" Type="Int32" Nullable="false" />
+          <Property Name="use_sigil_variant" Type="Int32" Nullable="false" />
+          <Property Name="account_digest_id" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="D3AccountDigest">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="last_played_hero_id" Type="Guid" Nullable="false" />
+          <Property Name="flags" Type="Int32" />
+          <Property Name="accountid" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="D3AccountSavedDefinition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="D3AccountSavedDefinition_seen_tutorials">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="accountid" Type="Guid" Nullable="false" />
+          <Property Name="tutorialnumber" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="D3AccountBannerConfiguration"><EntityTypeMapping TypeName="DBModel.D3AccountBannerConfiguration"><MappingFragment StoreEntitySet="D3AccountBannerConfiguration">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="banner_index" ColumnName="banner_index" />
+            <ScalarProperty Name="sigil_main" ColumnName="sigil_main" />
+            <ScalarProperty Name="sigil_accent" ColumnName="sigil_accent" />
+            <ScalarProperty Name="pattern_color_index" ColumnName="pattern_color_index" />
+            <ScalarProperty Name="background_color_index" ColumnName="background_color_index" />
+            <ScalarProperty Name="sigil_color_index" ColumnName="sigil_color_index" />
+            <ScalarProperty Name="placement_index" ColumnName="placement_index" />
+            <ScalarProperty Name="pattern" ColumnName="pattern" />
+            <ScalarProperty Name="use_sigil_variant" ColumnName="use_sigil_variant" />
+            <ScalarProperty Name="account_digest_id" ColumnName="account_digest_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="D3AccountDigest"><EntityTypeMapping TypeName="DBModel.D3AccountDigest"><MappingFragment StoreEntitySet="D3AccountDigest">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="last_played_hero_id" ColumnName="last_played_hero_id" />
+            <ScalarProperty Name="flags" ColumnName="flags" />
+            <ScalarProperty Name="accountid" ColumnName="accountid" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="D3AccountSavedDefinition"><EntityTypeMapping TypeName="DBModel.D3AccountSavedDefinition"><MappingFragment StoreEntitySet="D3AccountSavedDefinition">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="password" ColumnName="password" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="D3AccountSavedDefinition_seen_tutorials"><EntityTypeMapping TypeName="DBModel.D3AccountSavedDefinition_seen_tutorials"><MappingFragment StoreEntitySet="D3AccountSavedDefinition_seen_tutorials">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="accountid" ColumnName="accountid" />
+            <ScalarProperty Name="tutorialnumber" ColumnName="tutorialnumber" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="D3DBEntities">
+        <EntityTypeShape EntityType="DBModel.D3AccountBannerConfiguration" Width="1.5" PointX="0.75" PointY="0.75" Height="3.1340950520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.D3AccountDigest" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.D3AccountSavedDefinition" Width="1.5" PointX="2.75" PointY="3.75" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.D3AccountSavedDefinition_seen_tutorials" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
