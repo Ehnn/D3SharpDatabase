@@ -15,14 +15,7 @@ namespace D3Database
 
         public static void Connect()
         {
-            try
-            {
-                context = new DBEntities();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            context = new DBEntities();
 
             /*if (Connection == null || Connection.State != System.Data.ConnectionState.Open)
             {

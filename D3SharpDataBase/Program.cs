@@ -13,17 +13,17 @@ namespace D3Database
         //static Account currentAccount = null;
         static void Main(string[] args)
         {
-            try
+            
+            D3DB.Connect();
+            if (!D3DB.IsConnected)
             {
-                D3DB.Connect();
-                if (!D3DB.IsConnected)
-                {
-                    Console.WriteLine("Problem connecting to database");
-                }
+                Console.WriteLine("Problem connecting to database");
+            }
 
 
                 return;
-
+                try
+                {
 
                 //string dbFile = "d3sharp_fixed20110918_2.sqlite";
                 string dbFile = "DB.sqlite";
